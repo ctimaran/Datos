@@ -41,9 +41,7 @@ public class Libro {
     public int getAño(){
         return mAño;
     }
-    public void setAño(int año){
-        this.mAño = año;
-    }
+    public void setAño(int año){this.mAño = año;}
 }
 
 

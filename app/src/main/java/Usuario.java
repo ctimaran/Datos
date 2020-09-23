@@ -10,25 +10,28 @@ public class Usuario {
     @ColumnInfo(name = "usuario")
     private String mUsuario;
 
+    @ColumnInfo(name = "nombre")
     private String mNombre;
 
+    @ColumnInfo(name = "apellido")
     private String mApellido;
 
-    public void Usuario(@NonNull String usuario) {this.mUsuario = usuario;}
-
+    //setter
+    public void setUsuario(@NonNull String usuario) {this.mUsuario = usuario;}
+    //getter
     public String getUsuario(){
         return this.mUsuario;
     }
 
-    public void Nombre(String nombre) {this.mNombre = nombre;}
+    public void setNombre(String nombre) {this.mNombre = nombre;}
 
     public String getNombre(){
         return this.mNombre;
     }
 
-    public void Apellido(String apellido) {this.mApellido = apellido;}
+    public void setApellido(String apellido) {this.mApellido = apellido;}
 
-    public String getmApellido(){
+    public String getApellido(){
         return this.mApellido;
     }
 }
