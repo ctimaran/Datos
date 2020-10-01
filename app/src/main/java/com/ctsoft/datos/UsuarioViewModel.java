@@ -1,3 +1,5 @@
+package com.ctsoft.datos;
+
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
@@ -7,13 +9,22 @@ import java.util.List;
 
 public class UsuarioViewModel extends AndroidViewModel {
     private  UsuarioRepository mRepository;
-    private LiveData<List<Usuario>> mUsuarios;
+    private List<Usuario> mUsuarios;
 
     public UsuarioViewModel (Application application){
         super(application);
         mRepository = new UsuarioRepository(application);
         mUsuarios = mRepository.getUsuarios();
     }
-    LiveData<List<Usuario>> getUsuarios() {return  mUsuarios;}
-    public void insert(Usuario usuario) {mRepository.insert(usuario);}
+    List<Usuario> getUsuarios() {return  mUsuarios;}
+
+    public void insert(Usuario usuario) {
+        mRepository.insert(usuario);
+
+    }
+
+    public void delete(Usuario usuario){
+        mRepository.delete((usuario));
+    }
+
 }

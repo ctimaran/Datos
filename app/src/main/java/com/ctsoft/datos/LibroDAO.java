@@ -1,3 +1,6 @@
+package com.ctsoft.datos;
+
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -10,10 +13,10 @@ import java.util.List;
 public interface LibroDAO {
 
     @Query("SELECT * FROM libro")
-    List<Libro> getAll();
+    LiveData<List<Libro>> getAll();
 
-    @Query("SELECT * FROM libro  WHERE nombre LIKE :nombrelibro ORDER BY nombre ASC")
-    Libro getLibro(String nombrelibro);
+    @Query("SELECT * FROM libro  WHERE titulo LIKE :titulolibro ORDER BY titulo ASC")
+    Libro getLibro(String titulolibro);
 
     @Insert (onConflict = OnConflictStrategy.REPLACE)
     void insert(Libro libro);

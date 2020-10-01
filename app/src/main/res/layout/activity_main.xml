@@ -7,74 +7,83 @@
     tools:context=".MainActivity">
 
 
-
-    <Button
-        android:id="@+id/buttonNuevo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:text="Nuevo"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonSave"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="104dp" />
-
     <EditText
         android:id="@+id/editTextUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:ems="10"
+        android:hint="Usuario"
         android:inputType="textPersonName"
-        android:text="Usuario"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="104dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/editTextNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Nombre"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsuario"
-        tools:layout_editor_absoluteX="102dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsuario" />
 
     <EditText
-        android:id="@+id/editTextLastName"
+        android:id="@+id/editTextApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Apellido"
         android:inputType="textPersonName"
-        android:text="LastName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName"
-        tools:layout_editor_absoluteX="102dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
 
-    <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Guardar"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButtonSiguiente"
-        app:layout_constraintTop_toTopOf="@+id/imageButtonSiguiente"
-        tools:layout_editor_absoluteX="238dp" />
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextApellido">
 
-    <ImageButton
-        android:id="@+id/imageButtonAnterior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonNuevo"
-        app:layout_constraintTop_toTopOf="@+id/buttonNuevo"
-        app:srcCompat="@drawable/ic_anterior"
-        tools:layout_editor_absoluteX="39dp" />
+        <ImageButton
+            android:id="@+id/imageButtonAnterior"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="Anterior"
+            app:srcCompat="@drawable/ic_anterior" />
 
-    <ImageButton
-        android:id="@+id/imageButtonSiguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_siguiente"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="269dp" />
+
+        <Button
+            android:id="@+id/buttonNuevo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="NuevoUsuario"
+            android:text="Nuevo" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="GuardarUsuario"
+            android:text="Guardar" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="Siguiente"
+            app:srcCompat="@drawable/ic_siguiente" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
